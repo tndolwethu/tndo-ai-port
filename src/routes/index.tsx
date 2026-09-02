@@ -4,6 +4,8 @@ import { Github, Mail, MapPin, Linkedin } from "lucide-react";
 import { NavBar } from "@/components/portfolio/NavBar";
 import { Section } from "@/components/portfolio/Section";
 import { ProjectCard } from "@/components/portfolio/ProjectCard";
+import { plannedProjects } from "@/lib/projects";
+
 
 const TITLE = "Thandolwethu Tshabalala — Aspiring AI / ML Engineer";
 const DESCRIPTION =
