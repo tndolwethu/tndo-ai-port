@@ -37,11 +37,8 @@ const technicalSkills = [
   { name: "Microsoft Word", level: "Confident" },
 ];
 
-const projects = [
-  { title: "AI Study Assistant", focus: "AI / Python" },
-  { title: "Student Performance Analyzer", focus: "Python / Data" },
-  { title: "Machine Learning Prediction App", focus: "Machine Learning / Python" },
-];
+const projects = plannedProjects;
+
 
 function Home() {
   return (
@@ -194,7 +191,7 @@ function Home() {
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
+              <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
         </Section>
