@@ -275,13 +275,18 @@ function Home() {
               <p className="mt-2 text-base">tndolwethu</p>
             </a>
 
-            <div className="surface-card rounded-2xl p-6 opacity-70">
-              <Linkedin className="size-5 text-muted-foreground" aria-hidden />
+            <a
+              href="https://www.linkedin.com/in/tndolwethu"
+              target="_blank"
+              rel="noreferrer"
+              className="surface-card group rounded-2xl p-6 transition-transform hover:-translate-y-1"
+            >
+              <Linkedin className="size-5 text-primary" aria-hidden />
               <h3 className="mt-5 font-display text-[0.65rem] tracking-[0.22em] text-muted-foreground">
                 LINKEDIN
               </h3>
-              <p className="mt-2 text-base text-muted-foreground">To be added</p>
-            </div>
+              <p className="mt-2 text-base">tndolwethu</p>
+            </a>
           </div>
         </Section>
       </main>
