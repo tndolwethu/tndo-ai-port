@@ -210,18 +210,30 @@ function Home() {
 
         {/* Education */}
         <Section id="education" index="04" title="Education">
-          <div className="surface-card rounded-2xl p-6 sm:p-8">
-            <h3 className="text-xl font-semibold sm:text-2xl">CJC Johannesburg TVET College</h3>
-            <p className="mt-2 text-base text-muted-foreground">Financial Management</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {["N4", "N5", "N6"].map((level) => (
-                <span
-                  key={level}
-                  className="rounded-full border border-border px-4 py-1.5 font-display text-xs tracking-[0.18em] text-foreground"
-                >
-                  {level}
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="surface-card rounded-2xl p-6 sm:p-8">
+              <h3 className="text-xl font-semibold sm:text-2xl">CJC Johannesburg TVET College</h3>
+              <p className="mt-2 text-base text-muted-foreground">Financial Management</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["N4", "N5", "N6"].map((level) => (
+                  <span
+                    key={level}
+                    className="rounded-full border border-border px-4 py-1.5 font-display text-xs tracking-[0.18em] text-foreground"
+                  >
+                    {level}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="surface-card rounded-2xl p-6 sm:p-8">
+              <h3 className="text-xl font-semibold sm:text-2xl">Matric / Grade 12</h3>
+              <p className="mt-2 text-base text-muted-foreground">High School</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                <span className="rounded-full border border-border px-4 py-1.5 font-display text-xs tracking-[0.18em] text-foreground">
+                  COMPLETED
                 </span>
-              ))}
+              </div>
             </div>
           </div>
         </Section>
