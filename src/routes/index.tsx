@@ -37,6 +37,7 @@ const technicalSkills = [
   { name: "AI Tools", level: "In use" },
   { name: "Python", level: "Beginner" },
   { name: "Microsoft Word", level: "Confident" },
+  { name: "Microsoft Excel", level: "Confident" },
 ];
 
 const projects = plannedProjects;
