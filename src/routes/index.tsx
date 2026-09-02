@@ -173,14 +173,23 @@ function Home() {
               <h3 className="font-display text-[0.65rem] tracking-[0.22em] text-primary">
                 SOFT SKILLS
               </h3>
-              <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                This section will be updated.
-              </p>
-              <div aria-hidden className="mt-6 space-y-3">
-                <div className="h-3 w-2/3 rounded-full bg-muted" />
-                <div className="h-3 w-1/2 rounded-full bg-muted" />
-                <div className="h-3 w-3/5 rounded-full bg-muted" />
-              </div>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Problem-solving",
+                  "Critical thinking",
+                  "Communication",
+                  "Teamwork",
+                  "Time management",
+                  "Adaptability",
+                  "Continuous learning",
+                  "Attention to detail",
+                ].map((skill) => (
+                  <li key={skill} className="flex items-center gap-3 text-sm text-foreground">
+                    <span className="size-1.5 rounded-full bg-primary" aria-hidden />
+                    {skill}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </Section>
