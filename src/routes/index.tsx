@@ -239,12 +239,39 @@ function Home() {
         </Section>
 
         {/* Certifications */}
-        <Section id="certifications" index="05" title="Certifications">
+        <Section id="certifications" index="05" title="Certifications & Training">
           <div className="surface-card rounded-2xl p-6 sm:p-8">
-            <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              I am currently building my certifications and technical skills. Any certifications I
-              complete will be listed here.
-            </p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <h3 className="text-xl font-semibold sm:text-2xl">Google AI Essentials</h3>
+                <p className="mt-2 text-base text-muted-foreground">
+                  Completed through the CAPACITI One-Week AI Programme
+                </p>
+              </div>
+              <span className="inline-flex w-fit items-center rounded-full border border-border px-4 py-1.5 font-display text-xs tracking-[0.18em] text-foreground">
+                COMPLETED
+              </span>
+            </div>
+
+            <div className="mt-8">
+              <h4 className="font-display text-[0.65rem] tracking-[0.22em] text-primary">
+                TOPICS COVERED
+              </h4>
+              <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Introduction to AI",
+                  "Maximise Productivity with AI Tools",
+                  "Discover the Art of Prompting",
+                  "Use AI Responsibly",
+                  "Stay Ahead of the AI Curve",
+                ].map((topic) => (
+                  <li key={topic} className="flex items-start gap-3 text-sm text-foreground">
+                    <span className="mt-1.5 size-1.5 rounded-full bg-primary" aria-hidden />
+                    {topic}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Section>
 
