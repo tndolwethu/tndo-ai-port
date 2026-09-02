@@ -10,33 +10,79 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectsAiStudyAssistantRouteImport } from './routes/projects.ai-study-assistant'
+import { Route as ProjectsMachineLearningPredictionAppRouteImport } from './routes/projects.machine-learning-prediction-app'
+import { Route as ProjectsStudentPerformanceAnalyzerRouteImport } from './routes/projects.student-performance-analyzer'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsAiStudyAssistantRoute =
+  ProjectsAiStudyAssistantRouteImport.update({
+    id: '/projects/ai-study-assistant',
+    path: '/projects/ai-study-assistant',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProjectsMachineLearningPredictionAppRoute =
+  ProjectsMachineLearningPredictionAppRouteImport.update({
+    id: '/projects/machine-learning-prediction-app',
+    path: '/projects/machine-learning-prediction-app',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProjectsStudentPerformanceAnalyzerRoute =
+  ProjectsStudentPerformanceAnalyzerRouteImport.update({
+    id: '/projects/student-performance-analyzer',
+    path: '/projects/student-performance-analyzer',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/projects/ai-study-assistant': typeof ProjectsAiStudyAssistantRoute
+  '/projects/machine-learning-prediction-app': typeof ProjectsMachineLearningPredictionAppRoute
+  '/projects/student-performance-analyzer': typeof ProjectsStudentPerformanceAnalyzerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/projects/ai-study-assistant': typeof ProjectsAiStudyAssistantRoute
+  '/projects/machine-learning-prediction-app': typeof ProjectsMachineLearningPredictionAppRoute
+  '/projects/student-performance-analyzer': typeof ProjectsStudentPerformanceAnalyzerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/projects/ai-study-assistant': typeof ProjectsAiStudyAssistantRoute
+  '/projects/machine-learning-prediction-app': typeof ProjectsMachineLearningPredictionAppRoute
+  '/projects/student-performance-analyzer': typeof ProjectsStudentPerformanceAnalyzerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/projects/ai-study-assistant'
+    | '/projects/machine-learning-prediction-app'
+    | '/projects/student-performance-analyzer'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/projects/ai-study-assistant'
+    | '/projects/machine-learning-prediction-app'
+    | '/projects/student-performance-analyzer'
+  id:
+    | '__root__'
+    | '/'
+    | '/projects/ai-study-assistant'
+    | '/projects/machine-learning-prediction-app'
+    | '/projects/student-performance-analyzer'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ProjectsAiStudyAssistantRoute: typeof ProjectsAiStudyAssistantRoute
+  ProjectsMachineLearningPredictionAppRoute: typeof ProjectsMachineLearningPredictionAppRoute
+  ProjectsStudentPerformanceAnalyzerRoute: typeof ProjectsStudentPerformanceAnalyzerRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +94,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/ai-study-assistant': {
+      id: '/projects/ai-study-assistant'
+      path: '/projects/ai-study-assistant'
+      fullPath: '/projects/ai-study-assistant'
+      preLoaderRoute: typeof ProjectsAiStudyAssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/machine-learning-prediction-app': {
+      id: '/projects/machine-learning-prediction-app'
+      path: '/projects/machine-learning-prediction-app'
+      fullPath: '/projects/machine-learning-prediction-app'
+      preLoaderRoute: typeof ProjectsMachineLearningPredictionAppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/student-performance-analyzer': {
+      id: '/projects/student-performance-analyzer'
+      path: '/projects/student-performance-analyzer'
+      fullPath: '/projects/student-performance-analyzer'
+      preLoaderRoute: typeof ProjectsStudentPerformanceAnalyzerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ProjectsAiStudyAssistantRoute: ProjectsAiStudyAssistantRoute,
+  ProjectsMachineLearningPredictionAppRoute:
+    ProjectsMachineLearningPredictionAppRoute,
+  ProjectsStudentPerformanceAnalyzerRoute:
+    ProjectsStudentPerformanceAnalyzerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
