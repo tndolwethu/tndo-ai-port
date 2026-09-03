@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Download, FileText, Github, Mail, MapPin, Linkedin } from "lucide-react";
+import { Download, FileText, Github, Mail, MapPin, Linkedin, ExternalLink } from "lucide-react";
 
 import { NavBar } from "@/components/portfolio/NavBar";
 import { Section } from "@/components/portfolio/Section";
@@ -318,13 +318,19 @@ function Home() {
               href={LINKEDIN_URL}
               target="_blank"
               rel="noreferrer"
-              className="surface-card group rounded-2xl p-6 transition-transform hover:-translate-y-1"
+              aria-label="Open Thandolwethu Tshabalala's LinkedIn profile"
+              className="surface-card group relative block rounded-2xl p-6 transition-all hover:-translate-y-1 hover:border-primary/40 hover:bg-secondary/50"
             >
-              <Linkedin className="size-5 text-primary" aria-hidden />
+              <div className="flex items-start justify-between">
+                <Linkedin className="size-5 text-primary" aria-hidden />
+                <ExternalLink className="size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" aria-hidden />
+              </div>
               <h3 className="mt-5 font-display text-[0.65rem] tracking-[0.22em] text-muted-foreground">
                 LINKEDIN
               </h3>
-              <p className="mt-2 text-base">Thandolwethu Tshabalala</p>
+              <p className="mt-2 inline-flex items-center gap-2 text-base underline-offset-4 group-hover:underline">
+                Thandolwethu Tshabalala
+              </p>
             </a>
 
           </div>
