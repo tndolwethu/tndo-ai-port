@@ -78,17 +78,16 @@ function Home() {
             </h1>
 
             <p className="animate-rise mt-8 text-[clamp(1.25rem,4.5vw,2.75rem)] font-display font-medium leading-tight text-gradient">
-              ASPIRING AI /
+              ASPIRING
               <br />
-              MACHINE LEARNING
-              <br />
-              ENGINEER
+              AI ENGINEER
             </p>
 
             <p className="animate-rise mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Financial Management student developing practical skills in Python, artificial
-              intelligence and machine learning.
+              I am developing my skills in Python and AI tools and building toward a career in AI
+              engineering.
             </p>
+
 
             <div className="animate-rise mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
@@ -118,19 +117,21 @@ function Home() {
           <div className="grid gap-8 md:grid-cols-[1.4fr_1fr]">
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
               <p>
-                I am Thandolwethu Tshabalala, a Financial Management student at CJC Johannesburg
-                TVET College, based in Soweto, South Africa.
+                I am Thandolwethu Tshabalala, an aspiring AI Engineer based in Soweto, South
+                Africa. I completed Grade 12 / Matric and I am studying Financial Management at CJC
+                Johannesburg TVET College.
               </p>
               <p>
-                Alongside my studies, I am developing my technical skills in Python, AI tools and
-                machine learning. I am at the beginning of this journey and I am learning steadily
-                and deliberately.
+                Alongside my studies I am building the foundations for AI engineering: beginner
+                Python, practical work with AI tools, and an interest in machine learning as a
+                technical area I want to learn properly.
               </p>
               <p>
-                My goal is to pursue a career in AI, machine learning and AI engineering, and to
-                grow through internships, learnerships and entry-level opportunities where I can
-                keep building real experience.
+                I am at the start of this journey and I am learning steadily. My goal is to grow
+                into an AI Engineer through internships, learnerships and entry-level
+                opportunities where I can keep building real experience.
               </p>
+
             </div>
             <dl className="surface-card space-y-5 rounded-2xl p-6">
               <div>
