@@ -1,16 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Mail, MapPin, Linkedin } from "lucide-react";
+import { Download, FileText, Github, Mail, MapPin, Linkedin } from "lucide-react";
 
 import { NavBar } from "@/components/portfolio/NavBar";
 import { Section } from "@/components/portfolio/Section";
 import { ProjectCard } from "@/components/portfolio/ProjectCard";
 import { CertificateGrid } from "@/components/portfolio/CertificateGrid";
 import { plannedProjects } from "@/lib/projects";
+import cvAsset from "@/assets/thandolwethu-tshabalala-cv.pdf.asset.json";
 
+const LINKEDIN_URL = "https://www.linkedin.com/in/thandolwethu-tshabalala-a72771433";
 
-const TITLE = "Thandolwethu Tshabalala — Aspiring AI / ML Engineer";
+const TITLE = "Thandolwethu Tshabalala — Aspiring AI Engineer";
 const DESCRIPTION =
-  "Portfolio of Thandolwethu Tshabalala, a Financial Management student in Soweto, South Africa developing skills in Python, AI tools and machine learning.";
+  "Portfolio of Thandolwethu Tshabalala, an aspiring AI Engineer and Financial Management student in Soweto, South Africa, building skills in Python and AI tools.";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
