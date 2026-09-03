@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Download, FileText, Github, Mail, MapPin, Linkedin } from "lucide-react";
+import { Download, FileText, Github, Mail, MapPin, Linkedin, ExternalLink } from "lucide-react";
 
 import { NavBar } from "@/components/portfolio/NavBar";
 import { Section } from "@/components/portfolio/Section";
