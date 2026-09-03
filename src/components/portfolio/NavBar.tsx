@@ -7,9 +7,10 @@ const links = [
   { href: "#projects", label: "Projects" },
   { href: "#education", label: "Education" },
   { href: "#certifications", label: "Certifications" },
-
+  { href: "#cv", label: "CV" },
   { href: "#contact", label: "Contact" },
 ];
+
 
 /** Sticky site navigation with an accessible mobile menu. */
 export function NavBar() {
