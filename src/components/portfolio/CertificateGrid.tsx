@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CalendarDays, ExternalLink, Maximize2 } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 import {
   Dialog,
@@ -10,75 +10,39 @@ import {
 } from "@/components/ui/dialog";
 import { certificates, type Certificate } from "@/lib/certificates";
 
-/** Responsive grid of completed certificates with an enlarged viewer. */
+/**
+ * Text-only list of completed certificates. Certificate images stay hidden
+ * until the visitor opens a specific certificate in the viewer dialog.
+ */
 export function CertificateGrid() {
   const [active, setActive] = useState<Certificate | null>(null);
 
   return (
     <>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {certificates.map((cert) => (
-          <article
-            key={cert.slug}
-            className="surface-card animate-rise group flex flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
-          >
+          <li key={cert.slug}>
             <button
               type="button"
               onClick={() => setActive(cert)}
-              aria-label={`View the ${cert.title} certificate enlarged`}
-              className="relative block w-full overflow-hidden border-b border-border/60 bg-secondary/40"
+              aria-label={`View the ${cert.title} certificate`}
+              className="surface-card animate-rise group flex h-full w-full flex-col items-start gap-3 rounded-2xl p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
             >
-              <img
-                src={cert.image}
-                alt={`${cert.title} certificate issued to Thandolwethu Tshabalala by Google through Coursera, dated ${cert.date}`}
-                loading="lazy"
-                className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-              <span className="pointer-events-none absolute right-3 top-3 rounded-full border border-border/70 bg-background/80 p-2 opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
-                <Maximize2 className="size-4 text-primary" aria-hidden />
+              <span className="font-display text-[0.6rem] tracking-[0.18em] text-muted-foreground">
+                {cert.kind.toUpperCase()}
+              </span>
+              <span className="text-base font-semibold leading-snug sm:text-lg">{cert.title}</span>
+              <span className="mt-auto inline-flex items-center gap-2 font-display text-[0.65rem] tracking-[0.2em] text-primary">
+                VIEW CERTIFICATE
+                <ArrowRight
+                  className="size-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden
+                />
               </span>
             </button>
-
-            <div className="flex flex-1 flex-col p-6">
-              <div className="flex items-center gap-3">
-                <span className="rounded-full border border-primary/40 px-3 py-1 font-display text-[0.6rem] tracking-[0.18em] text-primary">
-                  COMPLETED
-                </span>
-                <span className="font-display text-[0.6rem] tracking-[0.18em] text-muted-foreground">
-                  {cert.kind.toUpperCase()}
-                </span>
-              </div>
-
-              <h3 className="mt-4 text-lg font-semibold leading-snug sm:text-xl">{cert.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{cert.issuer}</p>
-              <p className="mt-3 inline-flex items-center gap-2 text-sm text-muted-foreground">
-                <CalendarDays className="size-4 text-primary" aria-hidden />
-                {cert.date}
-              </p>
-
-              <div className="mt-6 flex flex-wrap items-center gap-3 pt-1">
-                <button
-                  type="button"
-                  onClick={() => setActive(cert)}
-                  className="glow-accent inline-flex items-center justify-center rounded-full px-5 py-2.5 font-display text-[0.65rem] tracking-[0.2em] text-primary-foreground transition-transform hover:-translate-y-0.5"
-                  style={{ backgroundImage: "var(--gradient-accent)" }}
-                >
-                  VIEW CERTIFICATE
-                </button>
-                <a
-                  href={cert.verifyUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-xs tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  VERIFY
-                  <ExternalLink className="size-3.5" aria-hidden />
-                </a>
-              </div>
-            </div>
-          </article>
+          </li>
         ))}
-      </div>
+      </ul>
 
       <Dialog open={active !== null} onOpenChange={(open) => !open && setActive(null)}>
         <DialogContent className="max-h-[92vh] max-w-5xl overflow-y-auto">
