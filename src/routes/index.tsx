@@ -144,7 +144,7 @@ function Home() {
                 <dt className="font-display text-[0.65rem] tracking-[0.22em] text-primary">
                   DIRECTION
                 </dt>
-                <dd className="mt-1 text-sm">Aspiring AI / Machine Learning Engineer</dd>
+                <dd className="mt-1 text-sm">Aspiring AI Engineer</dd>
               </div>
               <div>
                 <dt className="font-display text-[0.65rem] tracking-[0.22em] text-primary">
@@ -252,8 +252,43 @@ function Home() {
           <CertificateGrid />
         </Section>
 
+        {/* CV */}
+        <Section id="cv" index="06" title="CV">
+          <div className="surface-card flex flex-col gap-6 rounded-2xl p-6 sm:p-8">
+            <div className="flex items-start gap-4">
+              <FileText className="mt-1 size-5 shrink-0 text-primary" aria-hidden />
+              <div>
+                <h3 className="text-xl font-semibold sm:text-2xl">Curriculum Vitae</h3>
+                <p className="mt-2 max-w-xl text-sm text-muted-foreground sm:text-base">
+                  My full CV, covering my education, skills, certifications and planned projects.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={cvAsset.url}
+                target="_blank"
+                rel="noreferrer"
+                className="glow-accent inline-flex items-center justify-center rounded-full px-7 py-3.5 font-display text-xs tracking-[0.2em] text-primary-foreground transition-transform hover:-translate-y-0.5"
+                style={{ backgroundImage: "var(--gradient-accent)" }}
+              >
+                VIEW CV
+              </a>
+              <a
+                href={cvAsset.url}
+                download="Thandolwethu-Tshabalala-CV.pdf"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-display text-xs tracking-[0.2em] text-foreground transition-colors hover:bg-secondary"
+              >
+                DOWNLOAD CV
+                <Download className="size-3.5" aria-hidden />
+              </a>
+            </div>
+          </div>
+        </Section>
+
         {/* Contact */}
-        <Section id="contact" index="06" title="Contact">
+        <Section id="contact" index="07" title="Contact">
+
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <a
               href="mailto:tndo.tshabs@gmail.com"
